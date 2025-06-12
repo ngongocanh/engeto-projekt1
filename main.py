@@ -72,12 +72,12 @@ words = text.split()
 cleaned_words = [word.strip(".,!?") for word in words]
 
 word_count = len(cleaned_words)
-titlecase_count = sum(1 for w in cleaned_words if w.istitle())
-uppercase_count = sum(1 for w in cleaned_words if w.isupper() and w.isalpha())
-lowercase_count = sum(1 for w in cleaned_words if w.islower())
-numeric_strings = [w for w in cleaned_words if w.isdigit()]
+titlecase_count = sum(1 for word in cleaned_words if word.istitle())
+uppercase_count = sum(1 for word in cleaned_words if word.isupper() and word.isalpha())
+lowercase_count = sum(1 for word in cleaned_words if word.islower())
+numeric_strings = [word for word in cleaned_words if word.isdigit()]
 number_count = len(numeric_strings)
-number_sum = sum(int(w) for w in numeric_strings)
+number_sum = sum(int(word) for word in numeric_strings)
 
 # Výstup analýzy
 print(f"There are {word_count} words in the selected text.")
